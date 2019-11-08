@@ -53,3 +53,12 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  input {
+    width: 70vw;
+  }
+  button {
+    width: 10rem;
+  }
+}
