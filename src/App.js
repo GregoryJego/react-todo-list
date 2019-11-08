@@ -67,7 +67,8 @@ function App() {
       <hr />
       <input
         type="text"
-        placeholder="Titre de la tâche à trouver"
+        placeholder="Titre de la tâche active à trouver"
+        value={taskToFind}
         onChange={event => {
           setTaskToFind(event.target.value);
           setResults("");
@@ -76,14 +77,16 @@ function App() {
       <span>{results}</span>
       <button
         onClick={() => {
-          if (taskArray.length === 0) setResults("Not found !");
+          if (taskArray.length === 0)
+            setResults("Erreur : aucune tâche trouvée");
           else {
             for (let i = 0; i < taskArray.length; i++)
               if (taskArray[i] === taskToFind)
-                setResults("Found : " + taskArray[i]);
-              else setResults("Not found !");
+                setResults("Trouvé : " + taskToFind);
+              else setResults('La tâche "' + taskToFind + "\" n'existe pas !");
             // list[Object.keys(list)[i]].props.style.backgroundColor = "red";
           }
+          setTaskToFind("");
         }}
       >
         Trouver une tâche
