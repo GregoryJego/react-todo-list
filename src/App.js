@@ -22,7 +22,7 @@ function App() {
     <div
       className="task"
       key={task}
-      style={{ color: "grey" }}
+      style={{ color: "#9a4ec6" }}
       onClick={event => {
         // event.target.style.textDecoration = "line-through";
         deleteFromArray(task);
@@ -34,7 +34,11 @@ function App() {
   ));
 
   const listDone = taskArrayDone.map(task => (
-    <div className="task" key={task} style={{ textDecoration: "line-through" }}>
+    <div
+      className="task"
+      key={task}
+      style={{ textDecoration: "line-through", color: "red" }}
+    >
       X {task}
     </div>
   ));
