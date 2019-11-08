@@ -4,7 +4,6 @@ import "./App.css";
 function App() {
   const [newTask, setNewTask] = useState("");
   const [taskArray, setArray] = useState([]);
-  const [done, setDone] = useState([false]);
 
   const list = taskArray.map(task => (
     <div
@@ -25,6 +24,7 @@ function App() {
         name="input-task"
         type="text"
         placeholder="Titre"
+        value={newTask}
         onChange={event => {
           setNewTask(event.target.value);
         }}
@@ -33,6 +33,7 @@ function App() {
       <button
         onClick={() => {
           setArray([...taskArray, newTask]);
+          setNewTask("");
         }}
       >
         Ajouter une tâche

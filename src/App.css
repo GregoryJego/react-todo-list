@@ -21,7 +21,8 @@ input {
 }
 
 .task {
-  padding-top: 0.5rem;
+  padding-top: 0.7rem;
+  cursor: pointer;
 }
 
 button {
@@ -30,9 +31,10 @@ button {
   text-transform: uppercase;
   border-radius: 0.5rem;
   font-weight: bold;
-  font-size: 0.8rem;
-  padding: 1rem;
+  font-size: 0.7rem;
+  padding: 0.9rem;
   margin-top: 1rem;
   width: 11rem;
   outline: none;
+  cursor: pointer;
 }
