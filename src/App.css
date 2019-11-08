@@ -19,6 +19,20 @@ hr {
   padding: 0;
 }
 
+.normal {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #9a4ec6;
+}
+
+.found {
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #181063;
+  border: 1px solid #181063;
+  border-radius: 5px;
+}
+
 span {
   font-size: 0.8rem;
   font-style: italic;
@@ -33,11 +47,6 @@ input {
   margin-top: 1rem;
   border: 1px solid #d3d3d3;
   outline: none;
-}
-
-.task {
-  padding-top: 0.7rem;
-  cursor: pointer;
 }
 
 button {
