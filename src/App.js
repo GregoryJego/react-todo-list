@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [newTask, setNewTask] = useState("");
+  const [taskArray, setArray] = useState([]);
+  const [done, setDone] = useState([false]);
+
+  const list = taskArray.map(task => (
+    <div
+      className="task"
+      key={task}
+      onClick={event => {
+        event.target.style.textDecoration = "line-through";
+      }}
+    >
+      X {task}
+    </div>
+  ));
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>To-Do list</h1>
+      {list}
+      <input
+        name="input-task"
+        type="text"
+        placeholder="Titre"
+        onChange={event => {
+          setNewTask(event.target.value);
+        }}
+      />
+      <br />
+      <button
+        onClick={() => {
+          setArray([...taskArray, newTask]);
+        }}
+      >
+        Ajouter une tâche
+      </button>
     </div>
   );
 }
