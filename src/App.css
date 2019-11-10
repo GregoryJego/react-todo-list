@@ -5,7 +5,7 @@
 
 .container {
   color: #606c76;
-  padding: 0.2rem 2rem;
+  padding: 0.2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,12 +74,11 @@ h1 {
 }
 
 .search {
-  width: 30vw;
+  width: 40vw;
   margin-bottom: 2rem;
   align-self: center;
   color: #41403e;
   font-size: 1.2rem;
-  font-weight: bold;
   letter-spacing: 1px;
   border: solid 0.2rem grey;
   padding: 0.5rem 0.5rem;
@@ -172,5 +171,8 @@ input {
   }
   button {
     width: 10rem;
+  }
+  .search {
+    width: 60vw;
   }
 }
