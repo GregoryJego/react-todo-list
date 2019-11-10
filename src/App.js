@@ -28,8 +28,7 @@ function App() {
           deleteFromArray(index);
         }}
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="30"
+        width="50"
         x="0"
         y="0"
         fill="currentColor"
@@ -54,8 +53,7 @@ function App() {
         xmlns="http://www.w3.org/2000/svg"
         x="0"
         y="0"
-        width="20"
-        height="20"
+        width="30"
         enableBackground="new 0 0 196.407 196.407"
         version="1.1"
         viewBox="0 0 196.407 196.407"
@@ -94,6 +92,7 @@ function App() {
             type="text"
             placeholder="Nouvelle tâche"
             value={taskInput}
+            maxlength="50"
             onChange={event => {
               setTaskInput(event.target.value);
             }}
