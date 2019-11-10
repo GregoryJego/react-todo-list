@@ -6,11 +6,16 @@ import "./App.css";
 function App() {
   // Nouvelle tâche
   const [taskInput, setTaskInput] = useState("");
+
   const [tasks, setTasks] = useState([]);
+  const [tasksCopy, setTasksCopy] = useState([]);
+
+  const [taskSearch, setTaskSearch] = useState("");
 
   const deleteFromArray = index => {
     const newTasks = tasks.filter(name => name !== tasks[index]);
     setTasks(newTasks);
+    setTasksCopy(newTasks);
   };
 
   const cross = index => {
@@ -18,6 +23,15 @@ function App() {
     const check = copy[index].check;
     copy[index].check = !check;
     setTasks(copy);
+  };
+
+  const searchHandler = e => {
+    if (e.target.value) {
+      const research = new RegExp(e.target.value);
+      console.log(research);
+      const myResult = tasks.filter(el => research.test(el.name));
+      return setTasks(myResult);
+    } else return setTasks(tasksCopy);
   };
 
   const list = tasks.map((taskInput, index) => (
@@ -81,6 +95,17 @@ function App() {
         </svg>
       </h1>
       <div className="body">
+        <input
+          className="search"
+          type="text"
+          placeholder="Rechercher"
+          value={taskSearch}
+          maxLength="40"
+          onChange={event => {
+            setTaskSearch(event.target.value);
+            searchHandler(event);
+          }}
+        />
         <ul>{list}</ul>
         <form
           onSubmit={event => {
@@ -95,6 +120,7 @@ function App() {
               // Nous disons à React que l'état `tasks` est maintenant égal à `newTasks`
               setTasks(newTasks);
               setTaskInput("");
+              setTasksCopy(newTasks);
             }
           }}
         >
@@ -102,7 +128,7 @@ function App() {
             type="text"
             placeholder="Nouveau truc"
             value={taskInput}
-            maxlength="40"
+            maxLength="40"
             onChange={event => {
               setTaskInput(event.target.value);
             }}
