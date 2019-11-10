@@ -1,66 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+* {
+  box-sizing: border-box;
+}
+
 .container {
   color: #606c76;
   padding: 0.2rem 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  font-family: "Patrick Hand SC", cursive;
+}
+
+.trash {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #1e5e61;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+
+.check {
+  text-decoration: line-through;
+  color: rgb(177, 175, 175);
+  order: 2;
 }
 
 h1 {
+  margin-top: 3rem;
+  color: #1e5e61;
+  margin-bottom: 3rem;
   font-weight: normal;
   font-size: 3rem;
+  padding: 1rem;
+  text-decoration: underline;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 3em 0;
-  padding: 0;
+p {
+  padding-left: 0.5rem;
 }
 
-.normal {
-  padding: 0.5rem;
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.trash {
+  color: #1d1d2c;
+}
+
+.check .yes {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.submit {
+  padding: 1rem 1rem;
+  margin: 1.5rem 1rem;
+  transition: all 0.5s ease;
+  color: #41403e;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: solid 0.2rem #41403e;
+  outline: none;
+  /* box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2); */
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  font-family: "Patrick Hand SC", cursive;
+
+  background-color: #95b8ca;
+  color: #1d1d2c;
+
+  outline: none;
   cursor: pointer;
-  color: #9a4ec6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.found {
-  padding: 0.5rem;
-  cursor: pointer;
-  color: #181063;
-  border: 1px solid #181063;
-  border-radius: 5px;
-}
-
-span {
-  font-size: 0.8rem;
-  font-style: italic;
-  padding: 0.5rem;
+.submit svg {
+  padding: 0.1rem;
+  margin-left: 0.2rem;
 }
 
 input {
+  padding: 1rem 1rem;
+  margin: 0 0rem;
+  transition: all 0.5s ease;
+  color: #41403e;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  border: solid 0.2rem #41403e;
   width: 50vw;
-  font-size: 0.8rem;
+  outline: none;
+  /* box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2); */
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  font-family: "Patrick Hand SC", cursive;
+
+  /* width: 50vw;
+  font-size: 0.9rem;
   padding: 0.4rem;
   border-radius: 0.2rem;
   margin-top: 1rem;
   border: 1px solid #d3d3d3;
   outline: none;
-}
-
-button {
-  background-color: #9a4ec6;
-  color: white;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  font-size: 0.7rem;
-  padding: 0.9rem;
-  margin-top: 1rem;
-  width: 11rem;
-  outline: none;
-  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif; */
 }
 
 @media (max-width: 768px) {
