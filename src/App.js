@@ -102,7 +102,7 @@ function App() {
             type="text"
             placeholder="Nouveau truc"
             value={taskInput}
-            maxlength="50"
+            maxlength="40"
             onChange={event => {
               setTaskInput(event.target.value);
             }}
