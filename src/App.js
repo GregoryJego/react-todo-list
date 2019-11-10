@@ -92,7 +92,7 @@ function App() {
         >
           <input
             type="text"
-            placeholder="Tâche à ajouter"
+            placeholder="Nouvelle tâche"
             value={taskInput}
             onChange={event => {
               setTaskInput(event.target.value);
